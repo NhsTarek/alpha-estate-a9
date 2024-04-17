@@ -1,5 +1,5 @@
-{
-    "estates": [
+
+   [
       {
         "id": 1,
         "segment_name": "Residential",
@@ -16,7 +16,7 @@
         "id": 2,
         "segment_name": "Residential",
         "estate_title": "Modern Apartment in Downtown District",
-        "description": "Stylish urban living in a contemporary apartment complex. Close to restaurants, shopping, and public transportation.",
+        "description": "Stylish urban living in a contemporary apartment complex. Close to restaurants, shopping, and public transportation. All the things are available. In a affordable price it's a best choice for any person.",
         "price": "$2,500/month",
         "status": "rent",
         "area": "1,200 sq ft",
@@ -28,7 +28,7 @@
         "id": 3,
         "segment_name": "Residential",
         "estate_title": "Spacious Townhouse with Mountain Views",
-        "description": "A well-maintained townhouse offering panoramic views of the surrounding mountains. Ideal for families seeking a peaceful retreat.",
+        "description": "A well-maintained townhouse offering panoramic views of the surrounding mountains. Ideal for families seeking a peaceful retreat. With the wonderful view you can enjoy your enjoyable moments",
         "price": "$450,000",
         "status": "sale",
         "area": "2,800 sq ft",
@@ -49,5 +49,5 @@
         "image": "https://i.ibb.co/GvhmTBH/4.jpg"
       }
     ]
-  }
+
   
