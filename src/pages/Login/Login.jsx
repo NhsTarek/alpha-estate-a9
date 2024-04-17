@@ -1,9 +1,53 @@
 
 
 const Login = () => {
+
+    const handleLogin = e =>{
+        e.preventDefault()
+    }
     return (
-        <div>
-            <h2 className="text-3xl">This is Login</h2>
+        <div className="hero min-h-screen bg-base-200">
+            <div className="hero-content flex-col">
+                <div className="text-center">
+                    <h1 className="text-5xl font-bold my-10 font-poppins">Please login</h1>
+                </div>
+                <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <form className="card-body" onSubmit={handleLogin}>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input 
+                            type="email" 
+                            placeholder="Your Email" 
+                            name="email"
+                            className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input 
+                            type="password" 
+                            placeholder="Password" 
+                            name="password"
+                            className="input input-bordered" required />
+                            <label className="label">
+                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            </label>
+                        </div>
+                        <div>
+                            <p>or</p>
+                            <div>
+                                <button className="btn"></button>
+                            </div>
+                        </div>
+                        <div className="form-control mt-6">
+                            <button className="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     );
 };
