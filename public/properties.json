@@ -2,8 +2,8 @@
    [
       {
         "id": 1,
-        "segment_name": "Residential",
-        "estate_title": "Cozy Family Home in Suburban Neighborhood",
+        "segment_name": "Family Home",
+        "estate_title": "Cozy Family Home in Suburban Neighbor",
         "description": "A charming single-family home located in a quiet suburban area. Features spacious rooms, a backyard garden, and proximity to schools and parks.",
         "price": "$350,000",
         "status": "sale",
@@ -14,7 +14,7 @@
       },
       {
         "id": 2,
-        "segment_name": "Residential",
+        "segment_name": "Apartment",
         "estate_title": "Modern Apartment in Downtown District",
         "description": "Stylish urban living in a contemporary apartment complex. Close to restaurants, shopping, and public transportation. All the things are available. In a affordable price it's a best choice for any person.",
         "price": "$2,500/month",
@@ -26,7 +26,7 @@
       },
       {
         "id": 3,
-        "segment_name": "Residential",
+        "segment_name": "Townhouse",
         "estate_title": "Spacious Townhouse with Mountain Views",
         "description": "A well-maintained townhouse offering panoramic views of the surrounding mountains. Ideal for families seeking a peaceful retreat. With the wonderful view you can enjoy your enjoyable moments",
         "price": "$450,000",
@@ -38,7 +38,7 @@
       },
       {
         "id": 4,
-        "segment_name": "Residential",
+        "segment_name": "Luxury Villa",
         "estate_title": "Luxurious Lakeside Villa",
         "description": "A stunning waterfront villa offering unparalleled luxury and privacy. Perfect for those who appreciate fine living.",
         "price": "$1,200,000",
