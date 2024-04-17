@@ -3,8 +3,8 @@ import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-import PropertyDetails from "../pages/PropertyDetails/PropertyDetails";
 import PrivateRoutes from "./PrivateRoutes";
+import EstateDetails from "../pages/EstateDetails/EstateDetails";
 
 
 const router = createBrowserRouter([
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
             },
             {
                path: '/properties/:id',
-               element: <PrivateRoutes><PropertyDetails></PropertyDetails></PrivateRoutes>,
+               element: <PrivateRoutes><EstateDetails></EstateDetails></PrivateRoutes>,
             },
            
             {

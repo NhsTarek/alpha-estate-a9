@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 
-const PropertyDetails = () => {
+const EstateDetails = () => {
     const {id} = useParams();
 
     return (
@@ -18,4 +18,4 @@ const PropertyDetails = () => {
     );
 };
 
-export default PropertyDetails;
+export default EstateDetails;
