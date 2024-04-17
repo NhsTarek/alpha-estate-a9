@@ -1,0 +1,53 @@
+{
+    "estates": [
+      {
+        "id": 1,
+        "segment_name": "Residential",
+        "estate_title": "Cozy Family Home in Suburban Neighborhood",
+        "description": "A charming single-family home located in a quiet suburban area. Features spacious rooms, a backyard garden, and proximity to schools and parks.",
+        "price": "$350,000",
+        "status": "sale",
+        "area": "2,500 sq ft",
+        "location": "123 Maple Street, Suburbia",
+        "facilities": ["3 bedrooms", "2 bathrooms", "backyard garden"],
+        "image": "https://i.ibb.co/5W8hN5n/1.jpg"
+      },
+      {
+        "id": 2,
+        "segment_name": "Residential",
+        "estate_title": "Modern Apartment in Downtown District",
+        "description": "Stylish urban living in a contemporary apartment complex. Close to restaurants, shopping, and public transportation.",
+        "price": "$2,500/month",
+        "status": "rent",
+        "area": "1,200 sq ft",
+        "location": "456 Oak Avenue, City Center",
+        "facilities": ["Open-plan kitchen", "Fitness center", "Balcony with city views"],
+        "image": "https://i.ibb.co/cC3vNmt/2.jpg"
+      },
+      {
+        "id": 3,
+        "segment_name": "Residential",
+        "estate_title": "Spacious Townhouse with Mountain Views",
+        "description": "A well-maintained townhouse offering panoramic views of the surrounding mountains. Ideal for families seeking a peaceful retreat.",
+        "price": "$450,000",
+        "status": "sale",
+        "area": "2,800 sq ft",
+        "location": "789 Pine Lane, Mountain Valley",
+        "facilities": ["4 bedrooms", "3.5 bathrooms", "Garage", "Mountain-facing deck"],
+        "image": "https://i.ibb.co/qrNxHJD/3.jpg"
+      },
+      {
+        "id": 4,
+        "segment_name": "Residential",
+        "estate_title": "Luxurious Lakeside Villa",
+        "description": "A stunning waterfront villa offering unparalleled luxury and privacy. Perfect for those who appreciate fine living.",
+        "price": "$1,200,000",
+        "status": "sale",
+        "area": "4,500 sq ft",
+        "location": "101 Lakeview Drive, Lakeshore Estates",
+        "facilities": ["Private dock", "Infinity pool", "Home theater", "Landscaped gardens"],
+        "image": "https://i.ibb.co/GvhmTBH/4.jpg"
+      }
+    ]
+  }
+  

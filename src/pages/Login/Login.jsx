@@ -1,9 +1,26 @@
-
+// import { FaGoogle,FaGithub } from "react-icons/fa";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
 
+    const { signIn } = useContext(AuthContext);
+
     const handleLogin = e =>{
         e.preventDefault()
+        console.log(e.currentTarget);
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email');
+        const password = form.get('password');
+        // console.log(form.get('password'));
+        signIn(email, password)
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.error(error)
+        })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -36,17 +53,14 @@ const Login = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
-                        <div>
-                            <p>or</p>
-                            <div>
-                                <button className="btn"></button>
-                            </div>
-                        </div>
+                      
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
+                    
                 </div>
+                <p>Do no have an account please <Link className="text-blue-600" to="/register">Register</Link></p>
             </div>
         </div>
     );
