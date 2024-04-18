@@ -5,6 +5,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import Footer from "../../components/Footer";
 
 
 
@@ -152,6 +153,7 @@ const Register = () => {
                 </div>
                 <p>Already have an account please <Link className="text-blue-600" to="/login">Login</Link></p>
             </div>
+            
         </div>
     );
 };

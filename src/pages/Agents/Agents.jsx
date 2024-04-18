@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import Footer from "../../components/Footer";
 
 
 const Agents = () => {
@@ -70,6 +71,7 @@ const Agents = () => {
                     </tbody>
                 </table>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

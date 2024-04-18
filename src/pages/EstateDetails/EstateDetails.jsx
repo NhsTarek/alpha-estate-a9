@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 
 const EstateDetails = () => {
@@ -53,6 +54,7 @@ const EstateDetails = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </section>
     );
 };

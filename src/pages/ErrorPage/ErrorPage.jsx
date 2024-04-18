@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 
 const ErrorPage = () => {
@@ -19,7 +20,9 @@ const ErrorPage = () => {
                     <Link to="/" className="px-8 py-3 font-semibold rounded bg-green-400">Back to homepage</Link>
                 </div>
             </div>
+            
         </section>
+    
     );
 };
 

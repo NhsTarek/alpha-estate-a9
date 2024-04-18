@@ -6,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import Footer from "../../components/Footer";
 
 
 const Login = () => {
@@ -104,6 +105,7 @@ const Login = () => {
                <SocialLogin></SocialLogin>
                
             </div>
+           
             
             
         </div>

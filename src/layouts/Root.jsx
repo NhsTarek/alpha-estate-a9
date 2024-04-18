@@ -3,6 +3,9 @@ import Navbar from "../components/Navbar";
 
 
 
+
+
+
 const Root = () => {
     return (
 
@@ -10,6 +13,10 @@ const Root = () => {
 
             <Navbar></Navbar>
             <Outlet></Outlet>
+            
+           
+            
+            
 
         </div>
     );

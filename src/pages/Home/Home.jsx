@@ -4,6 +4,8 @@ import 'animate.css';
 import Property from "../../components/Property";
 import RecentReview from "../../components/RecentReview";
 import { Helmet } from "react-helmet-async";
+import Footer from "../../components/Footer";
+
 
 
 
@@ -30,6 +32,8 @@ const Home = () => {
                 }
             </div>
             <RecentReview></RecentReview>
+            <Footer></Footer>
+            
         </div>
     );
 };
