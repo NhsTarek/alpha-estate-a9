@@ -6,6 +6,8 @@ import Register from "../pages/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import UpdateProfile from "../pages/UpdateProfiel/UpdateProfile";
+import Agents from "../pages/Agents/Agents";
 
 
 const router = createBrowserRouter([
@@ -22,6 +24,7 @@ const router = createBrowserRouter([
             {
                path: '/properties/:id',
                element: <PrivateRoutes><EstateDetails></EstateDetails></PrivateRoutes>,
+               loader: () => fetch('/properties.json')
             },
            
             {
@@ -37,6 +40,16 @@ const router = createBrowserRouter([
             {
                 path: '/errorpage',
                 element:<ErrorPage></ErrorPage>,
+              
+            },
+            {
+                path: '/updateprofile',
+                element:<PrivateRoutes><UpdateProfile></UpdateProfile></PrivateRoutes>,
+              
+            },
+            {
+                path: '/agents',
+                element:<PrivateRoutes><Agents></Agents></PrivateRoutes>,
               
             },
         ]

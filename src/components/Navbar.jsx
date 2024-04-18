@@ -18,9 +18,10 @@ const Navbar = () => {
 
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
-
-        <li><NavLink to="/register">Register</NavLink></li>
         <li><NavLink to="/errorpage">404 Page</NavLink></li>
+        <li><NavLink to="/updateprofile">Update Profile</NavLink></li>
+        <li><NavLink to="/agents">Agents</NavLink></li>
+        
 
     </>
     return (

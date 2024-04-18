@@ -2,6 +2,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
+import toast from "react-hot-toast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
+
 
 
 const Register = () => {
@@ -9,7 +13,8 @@ const Register = () => {
     const { createUser, updateUserProfile } = useAuth()
     const location = useLocation();
     const navigate = useNavigate();
-    const [registerError, setRegisterError] = useState('');
+    const [showPassword, setShowPassword] = useState(false)
+
 
 
     const {
@@ -19,16 +24,32 @@ const Register = () => {
     } = useForm();
     const onSubmit = data => {
         const { email, password, image, fullName } = data;
+        if (password.length < 6) {
+            toast.error('Password should have at least 6 characters or longer');
+            return;
+        }
+
+        else if (!/[A-Z]/.test(password)) {
+            toast.error("Password must contain at least one uppercase letter.")
+            return;
+        }
+
+        else if (!/[a-z]/.test(password)) {
+            toast.error("Password must contain at least one lowercase letter.")
+            return;
+        }
+
         createUser(email, password)
             .then(() => {
                 updateUserProfile(fullName, image)
                     .then(() => {
+                        toast.success('Registration completed')
                         navigate(location?.state ? location.state : '/');
                     })
 
             })
-            .catch(error =>{
-                setRegisterError(error.message)
+            .catch(error => {
+                toast.error(error.message)
             })
     };
 
@@ -52,6 +73,9 @@ const Register = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200">
+            <Helmet>
+                <title>AlphaEstate | Register</title>
+            </Helmet>
             <div className="hero-content flex-col">
                 <div className="text-center">
                     <h1 className="text-5xl font-bold my-10 font-poppins">Please Register</h1>
@@ -97,22 +121,33 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input
-                                type="password"
-                                placeholder="Password"
+                            <div className="flex gap-2 items-center">
+                                <div>
+                                    <input
+                                        type={showPassword ? "text" : "password"}
 
-                                {...register("password", { required: true })}
-                                className="input input-bordered" />
-                            {errors.password && <span className="text-red-500">This field is required</span>}
+                                        placeholder="Password"
+
+                                        {...register("password", { required: true })}
+                                        className="input input-bordered" />
+                                    {errors.password && <span className="text-red-500">This field is required</span>}
+                                </div>
+                                <div>
+                                    <span onClick={() => setShowPassword(!showPassword)}>
+
+                                        {
+                                            showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                        }
+                                    </span>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
-                    {
-                        registerError && alert(registerError)
-                    }
+
 
                 </div>
                 <p>Already have an account please <Link className="text-blue-600" to="/login">Login</Link></p>

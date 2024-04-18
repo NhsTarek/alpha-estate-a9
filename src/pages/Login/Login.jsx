@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 
 import useAuth from "../../hooks/useAuth";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -22,9 +24,12 @@ const Login = () => {
       const onSubmit = data => {
         const {email, password} = data;
         signIn(email,password)
-        .then(result =>{
-            console.log(result.user);
+        .then(() =>{
+           toast.success('user logged in successfully')
             navigate(location?.state ? location.state : '/');
+        })
+        .catch(error =>{
+            toast.error(error.message)
         })
       };
 
@@ -53,6 +58,9 @@ const Login = () => {
     // }
     return (
         <div className="hero min-h-screen bg-base-200">
+            <Helmet>
+                <title>AlphaEstate | Login</title>
+            </Helmet>
             <div className="hero-content flex-col">
                 <div className="text-center">
                     <h1 className="text-5xl font-bold my-10 font-poppins">Please login</h1>
@@ -96,6 +104,7 @@ const Login = () => {
                <SocialLogin></SocialLogin>
                
             </div>
+            
             
         </div>
     );

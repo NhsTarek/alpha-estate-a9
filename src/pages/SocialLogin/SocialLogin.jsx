@@ -1,10 +1,13 @@
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
 
+
+
 const SocialLogin = () => {
-    const {googleLogin, githubLogin} = useAuth();
+    const { googleLogin, githubLogin } = useAuth();
+   
 
-
+   
 
 
 
