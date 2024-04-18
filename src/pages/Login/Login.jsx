@@ -1,34 +1,56 @@
 // import { FaGoogle,FaGithub } from "react-icons/fa";
-import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider";
+import { useForm } from "react-hook-form";
+
+import useAuth from "../../hooks/useAuth";
+import SocialLogin from "../SocialLogin/SocialLogin";
+
 
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 
-    const handleLogin = e =>{
-        e.preventDefault()
-        console.log(e.currentTarget);
-        const form = new FormData(e.currentTarget);
-        const email = form.get('email');
-        const password = form.get('password');
-        // console.log(form.get('password'));
-        signIn(email, password)
+
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm();
+      const onSubmit = data => {
+        const {email, password} = data;
+        signIn(email,password)
         .then(result =>{
-            console.log(result.user)
-
-            // navigate after login
-
-
+            console.log(result.user);
             navigate(location?.state ? location.state : '/');
         })
-        .catch(error =>{
-            console.error(error)
-        })
-    }
+      };
+
+
+
+
+    // const handleLogin = e =>{
+    //     e.preventDefault()
+    //     console.log(e.currentTarget);
+    //     const form = new FormData(e.currentTarget);
+    //     const email = form.get('email');
+    //     const password = form.get('password');
+    //     // console.log(form.get('password'));
+    //     signIn(email, password)
+    //     .then(result =>{
+    //         console.log(result.user)
+
+    //         // navigate after login
+
+
+    //        
+    //     })
+    //     .catch(error =>{
+    //         console.error(error)
+    //     })
+    // }
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col">
@@ -36,7 +58,7 @@ const Login = () => {
                     <h1 className="text-5xl font-bold my-10 font-poppins">Please login</h1>
                 </div>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form className="card-body" onSubmit={handleLogin}>
+                    <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -44,8 +66,9 @@ const Login = () => {
                             <input 
                             type="email" 
                             placeholder="Your Email" 
-                            name="email"
+                            {...register("email", { required: true })}
                             className="input input-bordered" required />
+                               {errors.email && <span className="text-red-500">This field is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -54,11 +77,13 @@ const Login = () => {
                             <input 
                             type="password" 
                             placeholder="Password" 
-                            name="password"
+                            {...register("password", { required: true })}
                             className="input input-bordered" required />
-                            <label className="label">
+                               {errors.password && <span className="text-red-500">This field is required</span>}
+                            {/* <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                            </label> */}
+                              
                         </div>
                       
                         <div className="form-control mt-6">
@@ -68,7 +93,10 @@ const Login = () => {
                     
                 </div>
                 <p>Do no have an account please <Link className="text-blue-600" to="/register">Register</Link></p>
+               <SocialLogin></SocialLogin>
+               
             </div>
+            
         </div>
     );
 };

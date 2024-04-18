@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import userDefaultPicture from "../assets/user.png"
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
@@ -9,10 +8,10 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
 
 
-    const handleSignOut = () =>{
+    const handleSignOut = () => {
         logOut()
-        .then()
-        .catch()
+            .then()
+            .catch()
     }
 
     const navLinks = <>
@@ -43,18 +42,29 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end">
-                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        <img alt="Tailwind CSS Navbar component" src={userDefaultPicture} />
-                    </div>
-                </div>
                 {
-                    user ?
-                        <button onClick={handleSignOut} className="btn">Sign Out</button>
-                        :
-                        <Link to="/login"><button className="btn">Login</button></Link>
+                   user?.email? <div className="dropdown dropdown-end">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+                            </div>
+                        </div>
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li>
+                                 <button className="btn btn-ghost btn-sm">{user?.displayName}</button>
+                                
+                            </li>
+                            <li>
+                                 <button onClick={()=> handleSignOut()} className="btn btn-ghost btn-sm">Logout</button>
+                                
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    : <Link to="/login">
+                        <button className="btn btn-ghost btn-sm">Login</button>
+                    </Link>
                 }
-
             </div>
         </div>
     );
