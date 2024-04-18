@@ -4,6 +4,9 @@ import { Helmet } from "react-helmet-async";
 const Agents = () => {
     return (
         <div className="container mx-auto my-10">
+            <Helmet>
+                <title>AlphaEstate | Agents</title>
+            </Helmet>
             <div className="text-center my-5 font-bold">
                 <h3>Here you can find top our agent details so you can contact them.</h3>
             </div>
