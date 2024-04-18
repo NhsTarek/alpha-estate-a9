@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import defaultUserPic from "../assets/user.png"
 
 
 const Navbar = () => {
@@ -19,6 +20,7 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
 
         <li><NavLink to="/register">Register</NavLink></li>
+        <li><NavLink to="/errorpage">404 Page</NavLink></li>
 
     </>
     return (
@@ -46,10 +48,10 @@ const Navbar = () => {
                 {
                     user? <div className="dropdown dropdown-end">
                         <div className="flex gap-2">
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar tooltip " data-tip={user.displayName}>
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar tooltip " data-tip={user?.displayName || 'user name not found'}>
                                 <div className="w-full rounded-full" >
 
-                                    <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+                                    <img alt="Tailwind CSS Navbar component" src={user?.photoURL || defaultUserPic } />
 
                                 </div>
                                 
